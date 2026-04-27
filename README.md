@@ -63,12 +63,12 @@ Each nucleotide is one-hot encoded:
 
 ### 3. Model Architecture
 The convolutional layer learns sequence patterns similar to motif recognition.
+A simple 1D CNN architecture is used: Conv1D → ReLU → MaxPooling → Fully Connected → Sigmoid output.
 
 ---
 
 ## Results
-
-The model successfully learns to detect the motif with high accuracy.
+The model demonstrates the ability to learn sequence patterns associated with motif presence, although performance is modest due to the simplicity of the dataset and model.
 
 ### Generated outputs:
 
@@ -77,10 +77,12 @@ The model successfully learns to detect the motif with high accuracy.
 - Confusion matrix  
 - ROC curve  
 
-Example metrics (will vary slightly per run):
+Example metrics (from one run):
 
-- Accuracy: ~0.95–1.00  
-- ROC-AUC: ~0.98–1.00  
+- Accuracy: ~0.60  
+- ROC-AUC: ~0.64
+
+Note: Performance varies due to the synthetic dataset and simple model architecture. This project is intended as a proof-of-concept demonstrating the workflow rather than achieving optimal predictive performance.
 
 ---
 
@@ -88,8 +90,21 @@ Example metrics (will vary slightly per run):
 
 All visualizations are saved in the `outputs/` directory:
 
+outputs/
+├── training_loss_curve.png
+├── training_accuracy_curve.png
+├── confusion_matrix.png
+└── roc_curve.png
 
 ---
+
+## Limitations
+
+- Uses synthetic data rather than real genomic datasets  
+- Motif detection task is simplified  
+- Model performance is limited due to small dataset and simple architecture  
+
+This project is intended as a minimal demonstration of a deep learning workflow for sequence data.
 
 ## How to Run
 
